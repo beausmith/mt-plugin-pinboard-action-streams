@@ -3,7 +3,7 @@
 Authors: Beau Smith  
 Copyright: 2010 Beau Smith  
 License: [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php)  
-Site: $PluginSite (html page with more info on author's site, plugins.mt.org, or GitHub)  
+Site: <http://github.com/beausmith/mt-plugin-pinboard-action-streams>  
 
 ## Overview
 
