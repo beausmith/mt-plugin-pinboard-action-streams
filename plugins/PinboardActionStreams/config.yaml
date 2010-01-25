@@ -1,0 +1,66 @@
+name: Action Streams: Pinboard
+id: PinboardAS
+key: PinboardAS
+author_link: http://beausmith.com/
+author_name: Beau Smith
+description: Display a Pinboard feed.
+version: 1.0
+plugin_link: http://github.com/beausmith/mt-plugin-pinboard-action-stream
+
+profile_services:
+    Pinboard:
+        name: Pinboard
+        url: http://pinboard.in/u:%s
+        ident_example: http://pinboard.in/u:beausmith
+        icon: images/redpin.gif
+        ident_label: Username
+        can_many: 1
+    # PinboardTag:
+    #     name: Pinboard Tag
+    #     url: http://pinboard.in/t:%s
+    #     ident_example: http://pinboard.in/t:iphone/
+    #     ident_prefix: http://pinboard.in/t:
+    #     icon: images/bluepin.gif
+    #     ident_label: Tag
+    #     can_many: 1
+
+action_streams:
+    Pinboard:
+        links:
+            name: Links
+            description: Your public links
+            fields:
+                - note
+            html_form: '[_1] saved the link <a href="[_2]">[_3]</a>'
+            html_params:
+                - url
+                - title
+            url: 'http://feeds.pinboard.in/rss/u:{{ident}}'
+            identifier: url
+            xpath:
+                foreach: //item
+                get:
+                    created_on: dc:date
+                    title: title
+                    url: link
+                    note: description
+    # PinboardTag:
+    #     links:
+    #         name: Links
+    #         description: A Pinboard tag
+    #         fields:
+    #             - note
+    #         html_form: 'Tagged "[_1]" on Pinboard: <a href="[_2]">[_3]</a>'
+    #         html_params:
+    #             - url
+    #             - title
+    #         url: 'http://feeds.pinboard.in/rss/t:{{ident}}'
+    #         identifier: url
+    #         xpath:
+    #             foreach: //item
+    #             get:
+    #                 created_on: dc:date
+    #                 title: title
+    #                 url: link
+    #                 note: description
+
