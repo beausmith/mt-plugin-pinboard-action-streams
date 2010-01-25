@@ -10,15 +10,9 @@ Site: <http://github.com/beausmith/mt-plugin-pinboard-action-streams>
 Aggregates user activity from a Pinboard.in account into Action Streams (which is bundled with Movable Type)
 
 
-## Features
-
-* feature
-    * sub feature
-
-
 ## Requirements
 
-* MT 4.x
+* MT 4.x (until Action Streams are available for MT5.x)
 
 
 ## Installation
